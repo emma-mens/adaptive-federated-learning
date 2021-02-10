@@ -41,5 +41,5 @@ This code was written by Shiqiang Wang and Tiffany Tuor.
 
 
 ### Tasks for project
-- [ ] Create EKS to test run client/server.
+- [ ] Create [EKS](https://logz.io/blog/amazon-eks-cluster/) to test run client/server.
 - [ ] Profile client/server side algorithms.
