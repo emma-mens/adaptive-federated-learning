@@ -38,3 +38,8 @@ When using this code for scientific publications, please kindly cite the above p
 #### Contributors
 
 This code was written by Shiqiang Wang and Tiffany Tuor.
+
+
+### Tasks for project
+- [ ] Create EKS to test run client/server.
+- [ ] Profile client/server side algorithms.
