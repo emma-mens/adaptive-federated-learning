@@ -1,6 +1,8 @@
 ### Adaptive Federated Learning in Resource Constrained Edge Computing Systems
 
-This repository includes source code for the paper S. Wang, T. Tuor, T. Salonidis, K. K. Leung, C. Makaya, T. He, and K. Chan, "Adaptive federated learning in resource constrained edge computing systems," IEEE Journal on Selected Areas in Communications, vol. 37, no. 6, pp. 1205 – 1221, Jun. 2019.
+This repository is based on the source code for the paper S. Wang, T. Tuor, T. Salonidis, K. K. Leung, C. Makaya, T. He, and K. Chan, "Adaptive federated learning in resource constrained edge computing systems," IEEE Journal on Selected Areas in Communications, vol. 37, no. 6, pp. 1205 – 1221, Jun. 2019.
+
+I'm using it as a starter code for a class project in UW CSE 561.
 
 #### Getting Started
 
