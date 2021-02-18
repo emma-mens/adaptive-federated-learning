@@ -21,7 +21,7 @@ class ControlAlgAdaptiveTauServer:
         self.rho_adapt_mvaverage = None
 
     def compute_new_tau(self, data_size_local_all, data_size_total, it_each_local, it_each_global, max_time,
-                        step_size, tau, use_min_loss):
+                        step_size, tau, use_min_loss, search_range=10):
 
         beta_adapt = 0
         delta_adapt = 0
@@ -82,7 +82,7 @@ class ControlAlgAdaptiveTauServer:
                 min_tau_new_tmp = 1
                 min_val = float('inf')
 
-                for tau_new_tmp in range(1, tau * 10 + 1):
+                for tau_new_tmp in range(1, tau * search_range + 1):
                     h_tau_tmp = max(0.0, (self.delta_adapt_mvaverage / self.beta_adapt_mvaverage) * (
                     np.power(step_size * self.beta_adapt_mvaverage + 1,
                              tau_new_tmp) - 1) - self.delta_adapt_mvaverage * step_size * tau_new_tmp)

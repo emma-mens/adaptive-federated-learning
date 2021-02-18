@@ -54,8 +54,8 @@ class CollectStatistics:
                                      train_label, test_image, test_label, w_global, total_time_recomputed):
 
         self.taus.append(tau)  # Use calculated tau
-        self.each_locals.append(it_each_local)
-        self.each_globals.append(it_each_global)
+        self.each_locals.append(it_each_local) # average time spent in each local iteration
+        self.each_globals.append(it_each_global) # average time spent in each global iteration
 
         if control_alg is not None:
             # TODO: Should define a getter in control algorithm class and use it here

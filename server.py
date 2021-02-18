@@ -59,6 +59,11 @@ for sim in sim_runs:
     for case in case_range:
 
         for tau_setup in tau_setup_all:
+            
+        # for param in param_search (with tau at -1)
+        # if search tau_max, tau_max = param etc
+        # else if search tau_setup_all, tau_setup = param
+        # else if search 
 
             stat.init_stat_new_global_round()
 
@@ -96,6 +101,7 @@ for sim in sim_runs:
                 send_msg(client_sock_all[n], msg)
 
             print('All clients connected')
+            wall_time = time.time()
 
             # Wait until all clients complete data preparation and sends a message back to the server
             for n in range(0, n_nodes):
@@ -197,7 +203,7 @@ for sim in sim_runs:
                         # Only update tau if use_w_global_prev_due_to_nan is False
                         tau_new = control_alg.compute_new_tau(data_size_local_all, data_size_total,
                                                               it_each_local, it_each_global, max_time,
-                                                              step_size, tau_config, use_min_loss)
+                                                              step_size, tau_config, use_min_loss, search_range)
                     else:
                         if tau_new_resume is not None:
                             tau_new = tau_new_resume
@@ -279,5 +285,6 @@ for sim in sim_runs:
             else:
                 w_eval = w_global
 
+            print('wall time:', time.time() - wall_time)
             stat.collect_stat_end_global_round(sim, case, tau_setup, total_time, model, train_image, train_label,
                                                test_image, test_label, w_eval, total_time_recomputed)
