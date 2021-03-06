@@ -5,20 +5,24 @@ SERVER_ADDR= 'localhost'   # When running in a real distributed setting, change 
 SERVER_PORT = 51000
 
 dataset_file_path = os.path.join(os.path.dirname(__file__), 'datasets')
-results_file_path = os.path.join(os.path.dirname(__file__), 'results')
+results_file_path = os.path.join(os.path.dirname(__file__), 'results/network')
 
 # Model, dataset, and control parameter configurations for MNIST with SVM
 dataset = 'MNIST_ORIG_EVEN_ODD'  # Use for SVM model
 model_name = 'ModelSVMSmooth'
 control_param_phi = 0.025   # Good for MNIST with smooth SVM
 
-search_range = 10 # gamma in the paper used for finding new value of tau
+search_range = 3 # gamma in the paper used for finding new value of tau
 tau_max = 200 #100  # Specifies the maximum value of tau
 max_time = 60 #15  # Total time budget in seconds
 data_case = 0
 
+bandwidth = 'na' # Kb/s
+loss = 20 # %
+latency = 'na' # ms
 
-experiment_marker = f'case_{data_case}_taumax_{tau_max}_maxtime_{max_time}_searchrange_{search_range}'
+
+experiment_marker = f'case_{data_case}_taumax_{tau_max}_maxtime_{max_time}_searchrange_{search_range}_bandwidth_{bandwidth}_loss_{loss}_latency_{latency}'
 single_run_results_file_path = results_file_path + f'/SingleRun_{experiment_marker}.csv'
 multi_run_results_file_path = results_file_path + f'/MultipleRuns_{experiment_marker}.csv'
 
